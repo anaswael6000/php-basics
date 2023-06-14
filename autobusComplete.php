@@ -1,3 +1,3 @@
 <?php
 
-echo array_rand(array_flip(range("a", "z")));
+echo range("a", "z")[rand(0, 25)];
