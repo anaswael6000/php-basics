@@ -1,10 +1,8 @@
 <?php
 
-$alpha = array_merge(range("a", "z"), range("أ", "ى"));
-
 function generate_random_letter() : void
 {
-    echo array_rand($alpha);
+    echo array_rand(array_flip(range("a", "z")));
 }
 
 generate_random_letter();
