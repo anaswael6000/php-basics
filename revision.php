@@ -1,27 +1,38 @@
 <?php
-$dir = scandir(getcwd());
-asort($dir);
-foreach($dir as $key => $value){
-    echo $value . "<br>\n";
-}
+
+// $dir = scandir(getcwd());
+// for ($i = 0; $i < count($dir); $i++)
+// {
+//     echo $dir[$i] . "<br>\n";
+// }
+
+// Another way 
+
+// $dir = dir("C:\Users\anas\Documents");
+
+// echo $dir->path . "<br>\n";
+// echo $dir->handle . "<br>\n";
+
+// while(TRUE)
+// {
+//     if (($file = $dir->read()) !== false)
+//     {
+//         echo $file . "<br>\n";
+//     }
+//     else
+//     {
+//         $dir->close();
+//         break;
+//     }
+// }
+
+// Another way
 
 // $dir = opendir(getcwd());
 
-// while (($file = readdir($dir)) == TRUE){
+// while(($file = readdir($dir)) !== false )
+// {
 //     echo $file . "<br>\n";
 // }
+
 // closedir($dir);
-
-// $dir = dir(getcwd());
-
-// echo "File path: " . $dir->path . "<br>\n";
-// echo "File handle: " . $dir->handle . "<br>\n";
-
-// // assigns the path and handle to a var then do nothing
-// for ($i = 0; $i < 2; $i++){
-//     $file = $dir->read();
-// }
-
-// while(($file = $dir->read()) == TRUE){
-//     echo $file . "<br>\n";
-// }
