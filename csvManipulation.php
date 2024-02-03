@@ -13,6 +13,8 @@ while(true)
     }
     else
     {
+        fclose($newFile);
+        fclose($file);
         break;
     }
 }

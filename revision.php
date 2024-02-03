@@ -1,191 +1,116 @@
 <?php
 
-$a = array(
-    [
-        "id" => "50",
-        "first_name" => "anas",
-        "last_name" => "wael"
-    ],
-    [
-        "id" => "51",
-        "first_name" => "peter",
-        "last_name" => "parker"
-    ],
-    [
-        "id" => "52",
-        "first_name" => "roger",
-        "last_name" => "paterson"
-    ]
-);
+$string = "I'm Anas && Abd allah";
 
-$Ids = array_column($a, "first_name", "id");
-print_r($Ids);
+echo htmlspecialchars(addslashes($string)) . "\n";
 
-echo "<br>\n";
+echo addcslashes($string, "&'A") . "\n";
 
-echo sizeof($a, 1);
+echo chr(ord("c")) . "\n";
 
-echo "<br>\n";
+echo chop($string) . "\n";
 
-$arr1 = ["Peter", "roger", "Andro"];
-$arr2 = ["is nice", "is old", "is nice"];
+echo chunk_split($string, 4, "_") . "\n";
 
-$combination = array_combine($arr1, $arr2);
+print_r(explode(" ", $string));
 
-print_r($combination);
+print_r($var);
 
-echo "<br>\n";
+$string = "anas\nroger\nraymond\n";
 
-$array = array_change_key_case($combination, CASE_UPPER);
-print_r($array);
+echo nl2br($string);
 
-echo "<br>\n";
+$var = "Anas";
 
-$array = array_merge($arr1, $arr2);
+$pattern = sprintf("/$var*/i");
 
-$array = array_chunk($array, 2);
+echo (preg_match($pattern, $string)) ? "As expected\n" : "You are a noop";
 
-print_r($array);
+echo "hello" <=> "hell";
+echo "\n";
+$value = NULL;
+$username = $value ?? "anas";
+echo $username . "\n";
 
-echo "<br>\n";
+$arr1 = [1, 2, 3];
+$arr2 = [1, 2, 3, 4];
 
-$arr2 = ["Peter", "roger", "Peter", "anas", "anas", "Peter"];
+echo $arr1 <=> $arr2;
+echo "\n";
 
-print_r(array_count_values($arr2));
+echo number_format(10000000) . "\n";
 
-echo "<br>\n";
+parse_str("name=anas&&age=50", $result);
+print_r($result);
 
-print_r(array_fill(0, 3, "anas is handsome"));
-
-echo "<br>\n";
-
-print_r(array_fill_keys($arr2, "is handsome"));
-
-echo "<br>\n";
-
-print_r(array_flip($a[0]));
-
-echo "<br>\n";
-
-print_r(array_intersect(["peter", "roger", "anas", "andro"], ["roger", "andro", "banana"]));
-
-echo "<br>\n";
-
-$array = array_filter(["Peter", "roger", "Peter", "anas", "anas", "Peter"], function ($var) { if ($var !== "Peter") { return true; } });
-
-print_r($array);
-
-echo "<br>\n";
-
-if (array_key_exists("roger", $combination))
+echo str_contains($string, "anas") . "\n";
+echo str_starts_with($string, "anas") . "\n";
+$string = "anas is handsome\n";
+if (str_ends_with($string, "handsome\n"))
 {
-    echo "Roger is in the array";
+    echo "handsome is the last word at the end of $string\n";
 }
 
-echo "<br>\n";
-
-$arr = array_keys($combination);
-
-foreach($arr as $value)
-{
-    echo $value . " ";
-}
-
-echo "<br>\n";
-
-$array = [1, 2, 3];
-
-function myfunction(int $var): int
-{
-    return $var * 5;
-}
-
-print_r(array_map("myfunction", $array));
-
-echo "<br>\n";
-
-print_r(array_pad($array, - (count($array) + 1), "50"));
-echo "<br>\n";
-print_r(array_pad($array, count($array) + 1, "50"));
-
-echo "<br>\n";
-
-echo array_product($array);
-
-echo "<br>\n";
-
-array_pop($array);
-
+$string = "abandon,abandons,abandoned";
+$array = str_getcsv($string);
 print_r($array);
 
-echo "<br>\n";
+$string = "";
 
-sort($arr);
-print_r($arr);
+$string = str_pad($string, 5, "h");
+echo $string . "\n";
 
-echo "<br>\n";
+echo str_repeat("h", 5) . "\n";
 
-echo $arr[array_rand($arr)];
+echo str_shuffle("hello, world") . "\n";
 
-echo "<br>\n";
+print_r(str_split("anas is handsome", 3));
 
-array_push($arr, "anas");
-print_r($arr);
-
-echo "<br>\n";
-
-$arr = array_reverse($arr);
-print_r($arr);
-
-echo "<br>\n";
-
-print_r(array_sum(array(1, 2, 3, 4)));
-
-echo "<br>\n";
-
-$key = array_search("is nice", $combination);
-echo $key;
-
-echo "<br>\n";
-
-print_r(array_slice($arr, 1, 2));
-
-echo "<br>\n";
-
-$removed_elements = array_splice($arr, 0, 2);
-print_r($arr);
-echo "<br>\n";
-
-array_unshift($arr, "anas");
-print_r($arr);
-
-echo "<br>\n";
-
-$rachel = "nice";
-$harry = "stupid";
-$Hisham = "old";
-$people = compact("rachel", "harry", "Hisham");
-print_r($people);
-
-echo "<br>\n";
-extract($combination);
-
-echo "{$Andro} {$roger}";
-
-echo "<br>\n";
+$string = "<p>anas is in a paragraph tag <?php> Hello, world </p>";
+echo strip_tags($string) . "\n";
 
 
+$string = "an\as is \ han\\";
+echo stripslashes($string) . "\n";
+echo stripcslashes($string) . "\n";
 
-echo "<br>\n";
+echo $string[strpos($string, "h")] . "\n";
+echo strstr($string, "is", true) . "\n";
 
+$string = "anas is handsome";
+echo strrchr($string, "h") . "\n";  // lsnfdjfkndldnfjdsklfnahfdshfkdskfnakldsfn;joifaeflkf                            
 
+echo strpbrk($string, "dhs") . "\n";
 
-echo "<br>\n";
+$token = strtok($string, " ");
 
-echo "<br>\n";
+while($token)
+{
+    echo $token . "\n";
+    $token = strtok(" ");
+}
 
+$string = "jeyyo, woryd";
+$string = strtr($string, ["j" => "H", "y" => "l"]) . "\n";
 
+$string = substr_replace($string, "", 6);
+echo $string . "\n";
 
-echo "<br>\n";
+echo substr_compare($string, "Hello", 0, 5) . "\n";
 
+$string = "anas is anas is anas";
+echo substr_count($string, "anas") . "\n";
 
+echo lcfirst("HELLO") . "\n";
+echo ucfirst("hello") . "\n";
+echo ucwords("anas is handsome") . "\n";
+
+similar_text("anas is handsome", "string", $percentage);
+echo $percentage . "\n";
+
+echo levenshtein("hello", "Hello") . "\n";
+
+$string1 = "Hello, john";
+$string2 = "Hello, anas";
+
+echo strncmp($string1, $string2, 7);

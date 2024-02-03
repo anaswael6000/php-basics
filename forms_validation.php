@@ -32,7 +32,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         }
     }
 
-    if(empty($_POST['commment']) == "FALSE"){
+    if(empty($_POST['comment']) == "FALSE"){
         $comment = adjust_input($_POST['comment']);
     }
 
@@ -47,7 +47,13 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
         <title>index.php</title>
+        <style>
+            p{
+                
+            }
+        </style>
     </head>   
     <body>
         <form action= "<?= htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
@@ -82,5 +88,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         </form>
         <h2>Your input is:</h2>
         <?php echo $name . "<br>" . $email . "<br>" . $website . "<br>" . $comment ."<br>" . $gender;?>
+        <p>
+            I adore writing code 
+        </p>
     </body>
 </html>
