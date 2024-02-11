@@ -1,6 +1,6 @@
 <?php
 
-class evenNumbersIterator implements Iterator
+class evenNumbers implements Iterator
 {
     private $items = [];
 
@@ -37,7 +37,7 @@ class evenNumbersIterator implements Iterator
 }
 
 $array = [3, 6, 29, 8, 389, 29, 2];
-$onlyEvenNumbers = new evenNumbersIterator($array);
+$onlyEvenNumbers = new evenNumbers($array);
 
 foreach($onlyEvenNumbers as $evenNumber)
 {
